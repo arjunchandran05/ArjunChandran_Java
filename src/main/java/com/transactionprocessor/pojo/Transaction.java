@@ -1,4 +1,4 @@
-package com.example.sampleProject.pojo;
+package com.transactionprocessor.pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

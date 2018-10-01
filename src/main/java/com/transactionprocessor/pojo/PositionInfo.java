@@ -1,4 +1,4 @@
-package com.example.sampleProject.pojo;
+package com.transactionprocessor.pojo;
 
 public class PositionInfo {
 	private String instrument;
@@ -44,5 +44,10 @@ public class PositionInfo {
 	}
 	public void setDelta(Long delta) {
 		this.delta = delta;
+	}
+	
+	@Override
+	public String toString() {
+		return this.instrument + " " + this.accountNo + " " + this.accountType + " " + this.quantity + " " + this.delta ;
 	}
 }

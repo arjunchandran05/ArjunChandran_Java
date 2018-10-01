@@ -1,4 +1,4 @@
-package com.example.sampleProject.enumTypes;
+package com.transactionprocessor.enumTypes;
 
 public enum TransactionTypeEnum { 
 	BUY("B"), SELL("S");

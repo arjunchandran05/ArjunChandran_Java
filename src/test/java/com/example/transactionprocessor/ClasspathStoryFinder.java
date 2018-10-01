@@ -1,4 +1,4 @@
-package com.example.transactionprocessor.helpers;
+package com.example.transactionprocessor;
 
 import static org.apache.commons.io.FileUtils.listFiles;
 

@@ -10,41 +10,8 @@ Narrative:
     Depending on the direction of the transaction (Buy/Sell) each transaction is recorded as debit and credit
     into external and internal accounts in the “Positions” file.
 
-Scenario: Midnight
-When the time is 00:00:00
-Then the clock should look like
-Y
-OOOO
-OOOO
-OOOOOOOOOOO
-OOOO
-
-Scenario: Middle of the afternoon
-When the time is 13:17:01
-Then the clock should look like
-O
-RROO
-RRRO
-YYROOOOOOOO
-YYOO
-
-Scenario: Just before midnight
-When the time is 23:59:59
-Then the clock should look like
-O
-RRRR
-RRRO
-YYRYYRYYRYY
-YYYY
-
-Scenario: Midnight
-When the time is 24:00:00
-Then the clock should look like
-Y
-RRRR
-RRRR
-OOOOOOOOOOO
-OOOO
-
-
+Scenario: Transaction type is B and Account type is E
+When the input transaction is { "TransactionId": 1,"Instrument": "IBM","TransactionType": "B","TransactionQuantity": 1000 }
+When the start of input position is IBM,101,E,100000
+Then the output transaction is IBM,101,E,101000,1000
 

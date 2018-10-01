@@ -1,4 +1,4 @@
-package com.example.samplepProject.fileutils;
+package com.transactionprocessor.fileutils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -13,13 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
-import org.junit.experimental.theories.Theories;
 
-import com.example.sampleProject.pojo.PositionInfo;
-import com.example.sampleProject.pojo.Transaction;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
+import com.transactionprocessor.pojo.PositionInfo;
+import com.transactionprocessor.pojo.Transaction;
 
 public class TransactionFileOperator {
 
@@ -97,7 +96,9 @@ public class TransactionFileOperator {
 			final ObjectMapper mapper = new ObjectMapper();
 			mapper.writeValue(out, list);
 			String headers = "Instrument,Account,AccountType,Quantity,Delta \r \n";
-			mapper.writeValue(new File(TransactionFileOperator.getOutputFilePath() + "\\Expected_EndOfDay_Positions.json", headers), list );
+			File jsonOuput = new File(TransactionFileOperator.getOutputFilePath() + "\\Expected_EndOfDay_Positions.json");
+			mapper.writeValue(jsonOuput, headers);
+			mapper.writeValue(jsonOuput, list );
 			// mapper.writeValue(new File(TransactionFileOperator.getOutputFilePath() + "\\Expected_EndOfDay_Positions.json"), list );
 
 			final byte[] data = out.toByteArray();

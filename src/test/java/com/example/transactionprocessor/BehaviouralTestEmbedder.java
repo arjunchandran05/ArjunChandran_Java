@@ -1,4 +1,4 @@
-package com.example.transactionprocessor.helpers;
+package com.example.transactionprocessor;
 
 import org.jbehave.core.ConfigurableEmbedder;
 import org.jbehave.core.configuration.Configuration;
